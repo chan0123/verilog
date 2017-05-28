@@ -7,7 +7,7 @@ module test;
      # 11 reset = 0;
      # 29 reset = 1;
      # 11 reset = 0;
-     # 100 $stop;
+     # 1000 $stop;
   end
 
   /* Make a regular pulsing clock. */
@@ -15,7 +15,7 @@ module test;
   always #5 clk = !clk;
 
   wire [7:0] value;
-  counter c1 (value, clk, reset);
+  counter c1 (clk, reset, value);
 
   initial
   begin
